@@ -8,11 +8,21 @@
 	<description>
     This Web Application demonstrates a single View servlet (T2).
                          demonstrates a Controller servlet (T3).
+                         demonstrates the configuration of a servlet (T4).
   </description>
 
 	<servlet>
 		<servlet-name>ListLeagues</servlet-name>
 		<servlet-class>sl314.view.ListLeaguesServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AddLeagueForm</servlet-name>
+		<servlet-class>sl314.view.AddLeagueFormServlet</servlet-class>
+		<init-param>
+			<param-name>seasons-list</param-name>
+			<param-value>Spring,Summer,Autumn,Winter</param-value>
+		</init-param>
 	</servlet>
 
 	<servlet>
@@ -25,14 +35,19 @@
 		<servlet-class>sl314.view.SuccessServlet</servlet-class>
 	</servlet>
 
-	<servlet>
-		<servlet-name>ErrorPage</servlet-name>
-		<servlet-class>sl314.view.ErrorPageServlet</servlet-class>
-	</servlet>
+	<!-- <servlet> 
+			<servlet-name>ErrorPage</servlet-name> 
+			<servlet-class>sl314.view.ErrorPageServlet</servlet-class> 
+		</servlet> ( *** Tema 3 *** ) -->
 
 	<servlet-mapping>
 		<servlet-name>ListLeagues</servlet-name>
 		<url-pattern>/list_leagues.view</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddLeagueForm</servlet-name>
+		<url-pattern>/admin/add_league.view</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -45,10 +60,10 @@
 		<url-pattern>/admin/success.view</url-pattern>
 	</servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>ErrorPage</servlet-name>
-		<url-pattern>/admin/error_page.view</url-pattern>
-	</servlet-mapping>
+	<!-- <servlet-mapping> 
+			<servlet-name>ErrorPage</servlet-name> 
+			<url-pattern>/admin/error_page.view</url-pattern> 
+		</servlet-mapping> ( *** Tema 3 *** ) -->
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

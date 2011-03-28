@@ -65,3 +65,37 @@ http://localhost:8080/soccer
 Just like the exercise, when you click add league, the league is not added
 to the list yet. This part will be implemented in future exercises.
 
+- Files :   
+ 	Modify	/trunk/SoccerLeague/README
+	Modify	/trunk/SoccerLeague/WebContent/WEB-INF/web.xml
+	Add	/trunk/SoccerLeague/WebContent/admin/add_league.html
+	Modify	/trunk/SoccerLeague/WebContent/index.html
+	Add	/trunk/SoccerLeague/src/sl314/controller/AddLeagueServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/view/ErrorPageServlet.java
+	Modify	/trunk/SoccerLeague/src/sl314/view/ListLeaguesServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/view/SuccessServlet.java
+
+* Tema 4 : Desarrollo de formularios dinámicos
+
+In this demo, you use the ConfigDemo project to demonstrate the soccer league
+sample web application and explain the following:
+
+1. Use the index.html to demonstrate the how the admin/add_league.view
+   link points to the servlet generated form.
+
+2. Use the sl314.view.AddLeagueFormServlet to demonstrate how to implement
+   the init method to initialize the servlet instance using servlet config
+   parameters, and how to use the same servlet to render the error messages.
+
+3. Use the web.xml to demonstrate how to define initialization parameters.
+
+4. Use sl314.controller.AddLeagueServlet to demonstrate how to dispatch the
+   error page back to the AddLeagueFormServlet.
+
+Once you have deployed the application, you can access the web application by
+opening a browser and accessing the following URL:
+
+http://localhost:8080/soccer
+
+Se deja de utilizar : - /view/ErrorPageServlet.java
+					  - /admin/add_league.html
