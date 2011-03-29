@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 // Support classes
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class AddLeagueServlet extends HttpServlet {
 				errorMsgs.add("Please enter the title of the league.");
 			}
 
-			// Send the ErrorPage view if there were errors
+			// Send the use back to the form, if there were errors
 			if (!errorMsgs.isEmpty()) {
 				RequestDispatcher view
 					//(T3) = request.getRequestDispatcher("error_page.view");
@@ -67,6 +68,11 @@ public class AddLeagueServlet extends HttpServlet {
 			League league = new League(year, season, title);
 			// Store the new league in the request-scope
 			request.setAttribute("league", league);
+			
+			// Store the new league in the leagueList context-scope attribute
+            ServletContext context = getServletContext();
+            List leagueList = (List) context.getAttribute("leagueList");
+            leagueList.add(league);
 
 			// Send the Success view
 			RequestDispatcher view = request
@@ -75,7 +81,7 @@ public class AddLeagueServlet extends HttpServlet {
 			return;
 
 			// Handle any unexpected exceptions
-		} catch (RuntimeException e) {
+		} catch (Exception e) {
 			errorMsgs.add(e.getMessage());
 			RequestDispatcher view 
 				//(T3) = request.getRequestDispatcher("error_page.view");

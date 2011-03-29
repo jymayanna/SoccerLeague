@@ -52,7 +52,7 @@ public class SuccessServlet extends HttpServlet {
         // Generate page heading
         out.println("<!-- Page Heading -->");
         out.println("<table border='1' cellpadding='5' cellspacing='0' width='400'>");
-        out.println("<tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>");
+        out.println("<tr bgcolor='#CCCCFF' align='center' valign='middle' height='20'>");
         out.println("  <td><h3>" + pageTitle + "</h3></td>");
         out.println("</tr>");
         out.println("</table>");

@@ -9,7 +9,21 @@
     This Web Application demonstrates a single View servlet (T2).
                          demonstrates a Controller servlet (T3).
                          demonstrates the configuration of a servlet (T4).
+                         demonstrates using the context-scope to store
+    a common resource: the "leagueList" for the Soccer League webapp (T5).
   </description>
+
+	<!-- Inicio Tema 5 -->
+	<context-param>
+		<param-name>leagues-file</param-name>
+		<param-value>/WEB-INF/data/leagues.txt</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>sl314.web.InitializeLeagues</listener-class>
+	</listener>
+	
+	<!-- Fin Tema 5 -->
 
 	<servlet>
 		<servlet-name>ListLeagues</servlet-name>
@@ -35,9 +49,7 @@
 		<servlet-class>sl314.view.SuccessServlet</servlet-class>
 	</servlet>
 
-	<!-- <servlet> 
-			<servlet-name>ErrorPage</servlet-name> 
-			<servlet-class>sl314.view.ErrorPageServlet</servlet-class> 
+	<!-- <servlet> <servlet-name>ErrorPage</servlet-name> <servlet-class>sl314.view.ErrorPageServlet</servlet-class> 
 		</servlet> ( *** Tema 3 *** ) -->
 
 	<servlet-mapping>
@@ -60,9 +72,7 @@
 		<url-pattern>/admin/success.view</url-pattern>
 	</servlet-mapping>
 
-	<!-- <servlet-mapping> 
-			<servlet-name>ErrorPage</servlet-name> 
-			<url-pattern>/admin/error_page.view</url-pattern> 
+	<!-- <servlet-mapping> <servlet-name>ErrorPage</servlet-name> <url-pattern>/admin/error_page.view</url-pattern> 
 		</servlet-mapping> ( *** Tema 3 *** ) -->
 
 	<welcome-file-list>

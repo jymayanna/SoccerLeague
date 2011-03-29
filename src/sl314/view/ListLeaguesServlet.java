@@ -1,5 +1,6 @@
 package sl314.view;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +10,6 @@ import java.io.PrintWriter;
 // Model classes
 import sl314.model.League;
 import java.util.List;
-import java.util.LinkedList;
 import java.util.Iterator;
 
 public class ListLeaguesServlet extends HttpServlet {
@@ -18,29 +18,17 @@ public class ListLeaguesServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 5592577235919233757L;
-	private List<League> leagueList = null;
     
     public void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws IOException {
         
-        // Create the set of leagues
-        leagueList = new LinkedList<League>();
-        leagueList.add( new League(2003, "Spring",
-                "Soccer League (Spring '03)") );
-        leagueList.add( new League(2003, "Summer",
-                "Summer Soccer Fest 2003") );
-        leagueList.add( new League(2003, "Fall",
-                "Fall Soccer League (2003)") );
-        leagueList.add( new League(2004, "Spring",
-                "Soccer League (Spring '04)") );
-        leagueList.add( new League(2004, "Summer",
-                "The Summer of Soccer Love 2004") );
-        leagueList.add( new League(2004, "Fall",
-                "Fall Soccer League (2004)") );
-        
         // Set page title
         String pageTitle = "Duke's Soccer League: List Leagues";
+        
+        // Retrieve the list of leagues from the context-scope
+        ServletContext context = getServletContext();
+        List leagueList = (List) context.getAttribute("leagueList");
         
         // Specify the content type is HTML
         response.setContentType("text/html");
