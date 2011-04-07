@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 //import java.io.PrintWriter;
 // Model classes
+import sl314.model.LeagueService;
 import sl314.model.League;
 import java.util.List;
 import java.util.LinkedList;
@@ -58,21 +59,18 @@ public class AddLeagueServlet extends HttpServlet {
 			// Send the use back to the form, if there were errors
 			if (!errorMsgs.isEmpty()) {
 				RequestDispatcher view
-					//(T3) = request.getRequestDispatcher("error_page.view");
 					= request.getRequestDispatcher("add_league.view");
 				view.forward(request, response);
 				return;
 			}
 
 			// Perform business logic
-			League league = new League(year, season, title);
+			String dataDirectory = (String)getServletContext().getAttribute("sl314.model.dataDirectory");
+			
+			LeagueService leagueSvc = new LeagueService(dataDirectory);
+			League league = leagueSvc.createLeague(year, season, title);
 			// Store the new league in the request-scope
 			request.setAttribute("league", league);
-			
-			// Store the new league in the leagueList context-scope attribute
-            ServletContext context = getServletContext();
-            List leagueList = (List) context.getAttribute("leagueList");
-            leagueList.add(league);
 
 			// Send the Success view
 			RequestDispatcher view = request
@@ -84,7 +82,6 @@ public class AddLeagueServlet extends HttpServlet {
 		} catch (Exception e) {
 			errorMsgs.add(e.getMessage());
 			RequestDispatcher view 
-				//(T3) = request.getRequestDispatcher("error_page.view");
 				= request.getRequestDispatcher("add_league.view");
 			view.forward(request, response);
 

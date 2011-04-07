@@ -11,19 +11,20 @@
                          demonstrates the configuration of a servlet (T4).
                          demonstrates using the context-scope to store
     a common resource: the "leagueList" for the Soccer League webapp (T5).
-  </description>
+    					 demonstrates a well-encapsulated Model for
+    the Soccer League webapp (T6).
+  	</description>
 
-	<!-- Inicio Tema 5 -->
+	<!-- NOTE: Pay attention to the dataDirectory parameter value, 
+	it is platform dependent. -->
 	<context-param>
-		<param-name>leagues-file</param-name>
-		<param-value>/WEB-INF/data/leagues.txt</param-value>
+		<param-name>data-directory</param-name>
+		<param-value>/Documents and Settings/Administrador/workspaceEE/SoccerLeague/WebContent/WEB-INF/data/</param-value>
 	</context-param>
 
 	<listener>
-		<listener-class>sl314.web.InitializeLeagues</listener-class>
+		<listener-class>sl314.web.InitializeModelProperties</listener-class>
 	</listener>
-	
-	<!-- Fin Tema 5 -->
 
 	<servlet>
 		<servlet-name>ListLeagues</servlet-name>
@@ -48,9 +49,29 @@
 		<servlet-name>Success</servlet-name>
 		<servlet-class>sl314.view.SuccessServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+        <servlet-name>RegisterForm</servlet-name>
+        <servlet-class>sl314.view.RegisterFormServlet</servlet-class>
+        <init-param>
+            <param-name>seasons-list</param-name>
+            <param-value>Spring,Summer,Autumn,Winter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>divisions-list</param-name>
+            <param-value>Coed A,Coed B,Mens,Womens</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>sl314.controller.RegisterServlet</servlet-class>
+    </servlet>
 
-	<!-- <servlet> <servlet-name>ErrorPage</servlet-name> <servlet-class>sl314.view.ErrorPageServlet</servlet-class> 
-		</servlet> ( *** Tema 3 *** ) -->
+    <servlet>
+        <servlet-name>ThankYou</servlet-name>
+        <servlet-class>sl314.view.ThankYouServlet</servlet-class>
+    </servlet>
 
 	<servlet-mapping>
 		<servlet-name>ListLeagues</servlet-name>
@@ -71,9 +92,21 @@
 		<servlet-name>Success</servlet-name>
 		<url-pattern>/admin/success.view</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>RegisterForm</servlet-name>
+        <url-pattern>/register/form.view</url-pattern>
+    </servlet-mapping>
 
-	<!-- <servlet-mapping> <servlet-name>ErrorPage</servlet-name> <url-pattern>/admin/error_page.view</url-pattern> 
-		</servlet-mapping> ( *** Tema 3 *** ) -->
+	<servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/register/form.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ThankYou</servlet-name>
+        <url-pattern>/register/thank_you.view</url-pattern>
+    </servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

@@ -26,11 +26,6 @@ project, and demonstrate how to do everything else, for example, creating a
 new servlet, creating an HTML page, setting the welcome page, building and
 deploying the web application.
 
-Once you have deployed the application, you can access the web application by
-opening a browser and accessing the following URL:
-
-http://localhost:8080/soccer
-
 In this demo, only the list all leagues link works.
 
  - Files :  /trunk/SoccerLeague/WebContent/index.html
@@ -56,11 +51,6 @@ league sample web application and explain the following:
 
 5. Use sl314.view.ErrorPageServlet to demonstrate how to manually render
    validation errors.
-
-Once you have deployed the application, you can access the web application by
-opening a browser and accessing the following URL:
-
-http://localhost:8080/soccer
 
 Just like the exercise, when you click add league, the league is not added
 to the list yet. This part will be implemented in future exercises.
@@ -92,12 +82,7 @@ sample web application and explain the following:
 4. Use sl314.controller.AddLeagueServlet to demonstrate how to dispatch the
    error page back to the AddLeagueFormServlet.
 
-Once you have deployed the application, you can access the web application by
-opening a browser and accessing the following URL:
-
-http://localhost:8080/soccer
-
-Se deja de utilizar : - /view/ErrorPageServlet.java
+- Se deja de utilizar : - /view/ErrorPageServlet.java
 					  - /admin/add_league.html
 					  
 - Files : 					  
@@ -124,8 +109,55 @@ sample web application and explain the following:
 4. Use sl314.controller.AddLeagueServlet to demonstrate how to set an attribute
    in the context/application scope.
 
-Once you have deployed the application, you can access the web application by
-opening a browser and accessing the following URL:
+- Files :
+	Modify	/trunk/SoccerLeague/README
+	Add	/trunk/SoccerLeague/WebContent/WEB-INF/data/leagues.txt
+	Modify	/trunk/SoccerLeague/WebContent/WEB-INF/web.xml
+	Modify	/trunk/SoccerLeague/src/sl314/controller/AddLeagueServlet.java
+	Modify	/trunk/SoccerLeague/src/sl314/view/ListLeaguesServlet.java
+	Modify	/trunk/SoccerLeague/src/sl314/view/SuccessServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/web/InitializeLeagues.java
+	
+* Tema 6 : Diseño de la capa de negocio	
+	
+In this demo, you use the ModelDemo project to demonstrate the soccer league
+sample web application and explain the following:
 
-http://localhost:8080/soccer
+1. Use the sl314.util.InitializeModelProperties to demonstrate how to implement
+   a context listener.
 
+2. use the web.xml to demonstrate the deployment settings of the context
+   listener, including context class and parameters.
+
+NOTE: Pay attention to the dataDirectory parameter value, it is platform
+dependent.
+
+3. Use the sl314.model.LeagueService to demonstrate a simple
+   implementation of a service component for the business logic.
+
+4. Use sl314.controller.AddLeagueServlet to demonstrate how to use the service
+   component.
+
+5. use the sl314.model.RegisterService to demonstrate the service facade.
+
+- Files :
+	Modify	/trunk/SoccerLeague/README
+	Modify	/trunk/SoccerLeague/WebContent/WEB-INF/data/leagues.txt
+	Add	/trunk/SoccerLeague/WebContent/WEB-INF/data/registrations.txt
+	Modify	/trunk/SoccerLeague/WebContent/WEB-INF/web.xml
+	Modify	/trunk/SoccerLeague/WebContent/index.html
+	Modify	/trunk/SoccerLeague/src/sl314/controller/AddLeagueServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/controller/RegisterServlet.java
+	Modify	/trunk/SoccerLeague/src/sl314/model/League.java
+	Add	/trunk/SoccerLeague/src/sl314/model/LeagueService.java
+	Add	/trunk/SoccerLeague/src/sl314/model/ObjectNotFoundException.java
+	Add	/trunk/SoccerLeague/src/sl314/model/Player.java
+	Add	/trunk/SoccerLeague/src/sl314/model/PlayerService.java
+	Add	/trunk/SoccerLeague/src/sl314/model/RegisterService.java
+	Modify	/trunk/SoccerLeague/src/sl314/view/ListLeaguesServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/view/RegisterFormServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/view/ThankYouServlet.java
+	Add	/trunk/SoccerLeague/src/sl314/web/InitializeModelProperties.java	
+	
+- Se deja de utilizar : 	
+		/trunk/SoccerLeague/src/sl314/web/InitializeLeagues.java

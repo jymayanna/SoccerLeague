@@ -7,5 +7,11 @@ leagues.txt
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/!svn/ver/6/trunk/SoccerLeague/WebContent/WEB-INF/data/leagues.txt
+/svn/!svn/ver/7/trunk/SoccerLeague/WebContent/WEB-INF/data/leagues.txt
+END
+registrations.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7/trunk/SoccerLeague/WebContent/WEB-INF/data/registrations.txt
 END

@@ -7,5 +7,35 @@ League.java
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/!svn/ver/3/trunk/SoccerLeague/src/sl314/model/League.java
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/League.java
+END
+ObjectNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/ObjectNotFoundException.java
+END
+LeagueService.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/LeagueService.java
+END
+RegisterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/RegisterService.java
+END
+Player.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/Player.java
+END
+PlayerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/model/PlayerService.java
 END

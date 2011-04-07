@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 // Model classes
+import sl314.model.LeagueService;
 import sl314.model.League;
 import java.util.List;
 import java.util.Iterator;
@@ -25,10 +26,6 @@ public class ListLeaguesServlet extends HttpServlet {
         
         // Set page title
         String pageTitle = "Duke's Soccer League: List Leagues";
-        
-        // Retrieve the list of leagues from the context-scope
-        ServletContext context = getServletContext();
-        List leagueList = (List) context.getAttribute("leagueList");
         
         // Specify the content type is HTML
         response.setContentType("text/html");
@@ -48,6 +45,11 @@ public class ListLeaguesServlet extends HttpServlet {
         out.println("  <td><h3>" + pageTitle + "</h3></td>");
         out.println("</tr>");
         out.println("</table>");
+        
+        // Retrieve the set of leagues the LeagueService
+        String dataDirectory = (String)getServletContext().getAttribute("sl314.model.dataDirectory");        
+        LeagueService leagueSvc = new LeagueService(dataDirectory);
+        List leagueList = leagueSvc.getAllLeagues();
         
         // Generate main body
         out.println("<p>");

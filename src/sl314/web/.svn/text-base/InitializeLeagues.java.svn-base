@@ -36,8 +36,8 @@ public class InitializeLeagues implements ServletContextListener {
                 String title = fields[2];
                 
                 // Add the new League item to the list
-                League item = new League(year, season, title);
-                leagueList.add(item);
+              //  League item = new League(year, season, title);
+               // leagueList.add(item);
             }
             
             context.setAttribute("leagueList", leagueList);

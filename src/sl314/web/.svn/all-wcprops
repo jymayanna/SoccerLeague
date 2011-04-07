@@ -3,9 +3,15 @@ svn:wc:ra_dav:version-url
 V 48
 /svn/!svn/ver/6/trunk/SoccerLeague/src/sl314/web
 END
+InitializeModelProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/web/InitializeModelProperties.java
+END
 InitializeLeagues.java
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/!svn/ver/6/trunk/SoccerLeague/src/sl314/web/InitializeLeagues.java
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/web/InitializeLeagues.java
 END

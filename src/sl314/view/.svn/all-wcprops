@@ -13,7 +13,13 @@ ListLeaguesServlet.java
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/!svn/ver/6/trunk/SoccerLeague/src/sl314/view/ListLeaguesServlet.java
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/view/ListLeaguesServlet.java
+END
+ThankYouServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/view/ThankYouServlet.java
 END
 ErrorPageServlet.java
 K 25
@@ -26,4 +32,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/!svn/ver/6/trunk/SoccerLeague/src/sl314/view/SuccessServlet.java
+END
+RegisterFormServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7/trunk/SoccerLeague/src/sl314/view/RegisterFormServlet.java
 END
